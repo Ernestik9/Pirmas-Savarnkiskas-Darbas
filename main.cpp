@@ -1,36 +1,19 @@
 #include "MyLib.h"
 #include "Stud.h"
+#include "studentu_generavimas.cpp"
+#include "studentu_rusiavimas.cpp"
 
 int main() {
-    vector<Stud> Vec1;
-    Stud Temp;
-    cout << "Kiek studentu yra? ";
-    int n;
-    cin >> n;
 
-    for (int i = 0; i < n; i++) {
-        cout << "Iveskite studento duomenis: " << endl;
-        ived(Temp);
-        Vec1.push_back(Temp);
-        val(Temp);
-    }
 
-    char pasirinkimas;
-    cout << "Skaičiuoti pagal medianą (m) ar vidurkį (v)? ";
-    cin >> pasirinkimas;
+    generuotiStudentus(1000, "studentai1000.txt");
+    generuotiStudentus(10000, "studentai10000.txt");
 
-    bool naudotiMediana = (pasirinkimas == 'm');
+    vector<studentas> grupe;
 
-    cout << setw(15) << left << "Pavarde"
-         << setw(15) << left << "Vardas"
-         << setw(20) << left << (naudotiMediana ? "Galutinis (Med.)" : "Galutinis (Vid.)") << endl;
-    cout << "----------------------------------------------------------" << endl;
+    rusiuotiStudentus(grupe, "vargsiukai.txt", "kietiakiai.txt");
 
-    for (int i = 0; i < n; i++) {
-        skaiciuotiGalutini(Vec1.at(i), naudotiMediana);
-        output(Vec1.at(i));
-    }
-
-    system("pause");
+ 
+    
     return 0;
 }
