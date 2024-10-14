@@ -1,4 +1,4 @@
-#include "myLyb.h"
+#include "myLib.h"
 #include <fstream>
 #include <random>
 
