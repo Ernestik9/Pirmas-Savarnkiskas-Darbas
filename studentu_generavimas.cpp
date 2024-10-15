@@ -1,4 +1,5 @@
 #include "studentu_generavimas.h"
+#include "mylib.h"
 
 void generuotiStudentus(int kiekis, const std::string& failoPavadinimas) {
     std::ofstream fout(failoPavadinimas);
@@ -21,3 +22,4 @@ void generuotiStudentus(int kiekis, const std::string& failoPavadinimas) {
     }
     fout.close();
 }
+
