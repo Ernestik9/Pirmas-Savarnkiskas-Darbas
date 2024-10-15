@@ -1,26 +1,37 @@
-#include <iostream>
-#include <chrono>
+#include "mylib.h"
+
 #include "studentu_generavimas.h"
 #include "studentu_rusiavimas.h"
 
 int main() {
-   
-    auto start = chrono::high_resolution_clock::now();
-    
-    generuotiStudentus(1000, "studentai1000.txt");
-    
-    auto end = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::milliseconds>(end - start);
-    cout << "Failų generavimo laikas: " << duration.count() << " ms" << endl;
+
+    int kiekiai[] = {1000, 10000, 100000, 1000000, 10000000};
+    std::string failuPavadinimai[] = {
+        "studentai1000.txt",
+        "studentai10000.txt",
+        "studentai100000.txt",
+        "studentai1000000.txt",
+        "studentai10000000.txt"
+    };
+
+    for (int i = 0; i < 5; ++i) {
+
+        auto start = std::chrono::high_resolution_clock::now();
 
 
-    start = chrono::high_resolution_clock::now();
+        generuotiStudentus(kiekiai[i], failuPavadinimai[i]);
 
-    rusiuotiStudentus("studentai1000.txt", "vargsiukai.txt", "kietiakiai.txt");
+        auto end = std::chrono::high_resolution_clock::now();
+        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+        std::cout << "Failas " << failuPavadinimai[i] << " sugeneruotas per: " << duration.count() << " ms" << std::endl;
 
-    end = chrono::high_resolution_clock::now();
-    duration = chrono::duration_cast<chrono::milliseconds>(end - start);
-    cout << "Rūšiavimo ir įrašymo į failus laikas: " << duration.count() << " ms" << endl;
+
+        start = std::chrono::high_resolution_clock::now();
+        rusiuotiStudentus(failuPavadinimai[i], "vargsiukai.txt", "kietiakiai.txt");
+        end = std::chrono::high_resolution_clock::now();
+        duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+        std::cout << "Rūšiavimas ir išvedimas į failus užtruko: " << duration.count() << " ms" << std::endl;
+    }
 
     return 0;
 }
