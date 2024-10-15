@@ -1,10 +1,9 @@
 #include "mylib.h"
-
+#include <iostream>
 #include "studentu_generavimas.h"
 #include "studentu_rusiavimas.h"
 
 int main() {
-
     int kiekiai[] = {1000, 10000, 100000, 1000000, 10000000};
     std::string failuPavadinimai[] = {
         "studentai1000.txt",
@@ -15,7 +14,6 @@ int main() {
     };
 
     for (int i = 0; i < 5; ++i) {
-
         auto start = std::chrono::high_resolution_clock::now();
 
 
@@ -26,11 +24,16 @@ int main() {
         std::cout << "Failas " << failuPavadinimai[i] << " sugeneruotas per: " << duration.count() << " ms" << std::endl;
 
 
-        start = std::chrono::high_resolution_clock::now();
-        rusiuotiStudentus(failuPavadinimai[i], "vargsiukai.txt", "kietiakiai.txt");
-        end = std::chrono::high_resolution_clock::now();
-        duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-        std::cout << "Rūšiavimas ir išvedimas į failus užtruko: " << duration.count() << " ms" << std::endl;
+        std::cout << "Testavimas su std::vector:\n";
+        rusiuotiStudentus<std::vector<studentas>>(failuPavadinimai[i], "vargsiukai_vector.txt", "kietiakiai_vector.txt");
+
+
+        std::cout << "Testavimas su std::list:\n";
+        rusiuotiStudentus<std::list<studentas>>(failuPavadinimai[i], "vargsiukai_list.txt", "kietiakiai_list.txt");
+
+
+        std::cout << "Testavimas su std::deque:\n";
+        rusiuotiStudentus<std::deque<studentas>>(failuPavadinimai[i], "vargsiukai_deque.txt", "kietiakiai_deque.txt");
     }
 
     return 0;
