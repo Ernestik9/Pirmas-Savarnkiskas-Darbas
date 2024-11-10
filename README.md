@@ -1,9 +1,3 @@
 # Pirmas-Savarnkiskas-Darbas
-  programą, kuri nuskaito šiuos studentų duomenis:
-        vardą ir pavardę
-        n atliktų namų darbų (nd) rezultatus (10-balėje sistemoje), o taip pat egzamino (egz) rezultatą.
-    Tuomet iš šių duomenų, suskaičiuoja galutinį balą (galutinis):
 
-galutinis = 0.4 * vidurkis + 0.6 * egzaminas
-
-Programos rezultatai rodo, kaip skirtingi metodai (vidurkis ir mediana) gali įtakoti galutinį balą, ir leidžia pasirinkti labiausiai tinkamą metodą priklausomai nuo situacijos.
+Šis projektas skirtas analizuoti ir optimizuoti studentų rūšiavimo kategorijų skaidymo spartos analizę naudojant įvairius konteinerių tipus (std::vector, std::list, std::deque) ir strategijas. Programoje studentai yra suskirstomi į dvi kategorijas: „vargšiukai“ su galutiniu balu mažesniu nei 5.0 ir „kietiakiai“ su galutiniu balu 5.0 arba didesniu.
