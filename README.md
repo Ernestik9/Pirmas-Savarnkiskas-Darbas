@@ -5,3 +5,5 @@
     Tuomet iš šių duomenų, suskaičiuoja galutinį balą (galutinis):
 
 galutinis = 0.4 * vidurkis + 0.6 * egzaminas
+
+Programos rezultatai rodo, kaip skirtingi metodai (vidurkis ir mediana) gali įtakoti galutinį balą, ir leidžia pasirinkti labiausiai tinkamą metodą priklausomai nuo situacijos.
