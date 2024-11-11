@@ -23,3 +23,5 @@ Duomenų įvedimas: Programa paprašys įvesti studentų duomenis: vardą, pavar
 3.Pasirinkimas, kaip apskaičiuoti galutinį balą: Pasirinkite, ar norite skaičiuoti galutinį balą pagal vidurkį (pasirinkite 'v') arba medianą (pasirinkite 'm').
 
 4.Rezultatų peržiūra: Po to, kai bus įvesti visi studentų duomenys, programa išves galutinius balus tiek pagal vidurkį, tiek pagal medianą, priklausomai nuo to, ką pasirinksite.
+
+Programos tikslas : Programos tikslas yra teisingai apskaičiuoti galutinius studentų balus pagal jų namų darbų ir egzamino rezultatus ir išvesti gautus rezultatus.
