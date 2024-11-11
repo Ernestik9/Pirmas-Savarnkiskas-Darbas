@@ -1,12 +1,17 @@
 #ifndef MYLIB_H_INCLUDED
 #define MYLIB_H_INCLUDED
 
+
 #include <iostream>
 #include <iomanip>
 #include <string>
 #include <vector>
 #include <algorithm>
 #include <numeric>
+#include <fstream>
+#include <sstream>
+#include <cstdlib>
+using namespace std;
 
 using std::cout;
 using std::cin;
@@ -18,5 +23,10 @@ using std::right;
 using std::string;
 using std::vector;
 using std::accumulate;
+
+
+void spausd(const vector<int>& LokVec);
+
+
 
 #endif // MYLIB_H_INCLUDED
